@@ -13089,7 +13089,7 @@ div#notebook {
 <script>
 $( document ).ready(function(){
 
-            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "428.6px"}, "toc_section_display": true, "toc_window_display": true};
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": false, "toc_position": {"height": "calc(100% - 180px)", "left": "10px", "top": "150px", "width": "428.6px"}, "toc_section_display": true, "toc_window_display": true};
 
             // fire the main function with these parameters
             require(['nbextensions/toc2/toc2'], function (toc2) {
@@ -13104,7 +13104,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Sample-Data-Quality-Report">Sample Data Quality Report<a class="anchor-link" href="#Sample-Data-Quality-Report">&#182;</a></h1>
+<h1 id="PATIENT.csv">PATIENT.csv<a class="anchor-link" href="#PATIENT.csv">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -13117,37 +13117,31 @@ $( document ).ready(function(){
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>All columns were interpreted as the correct data types.
-civets_id                            Int64
-matchedto_id                         Int64
-close_date                  datetime64[ns]
-yob                                  Int64
-sex                                  Int64
-race_ethn                            Int64
-hiv                                  Int64
-hiv_fu                               Int64
-hiv_risk                             Int64
-death_date                  datetime64[ns]
-disenroll_date              datetime64[ns]
-vac_dose1                            Int64
-vacdose1_date               datetime64[ns]
-vac_dose2                            Int64
-vacdose2_date               datetime64[ns]
-vac_dose3                            Int64
-vacdose3_date               datetime64[ns]
-base_date                   datetime64[ns]
-covidtest_base              datetime64[ns]
-coviddx_base                datetime64[ns]
-partialbreakthrough                  Int64
-partialbreakthrough_date    datetime64[ns]
-aids                                 Int64
-aids_date                   datetime64[ns]
-art_start                   datetime64[ns]
-art_cd4                              Int64
-art_cd4_date                datetime64[ns]
-base_cd4                             Int64
-base_cd4_date               datetime64[ns]
-base_hivrna                          Int64
-base_hivrna_date            datetime64[ns]
+civets_id                  Int64
+matchedto_id               Int64
+close_date        datetime64[ns]
+yob                        Int64
+sex                        Int64
+race_ethn                  Int64
+hiv                        Int64
+hiv_fu                     Int64
+hiv_risk                   Int64
+death_date        datetime64[ns]
+disenroll_date    datetime64[ns]
+vac_dose1                  Int64
+vacdose1_date     datetime64[ns]
+vac_dose2                  Int64
+vacdose2_date     datetime64[ns]
+vac_dose3                  Int64
+vacdose3_date     datetime64[ns]
+full_date         datetime64[ns]
+covidtest_base    datetime64[ns]
+coviddx_base      datetime64[ns]
+aids                       Int64
+aids_date         datetime64[ns]
+art_start         datetime64[ns]
+art_cd4                    Int64
+art_cd4_date      datetime64[ns]
 dtype: object
 </pre>
 </div>
@@ -13203,7 +13197,7 @@ Any hiv outside [0, 1]? No
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Missing-Data-Visualization">Missing Data Visualization<a class="anchor-link" href="#Missing-Data-Visualization">&#182;</a></h1>
+<h2 id="Missing-Data-Visualization">Missing Data Visualization<a class="anchor-link" href="#Missing-Data-Visualization">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13306,17 +13300,17 @@ Count of number of matches
     <tr>
       <th>1</th>
       <td>3</td>
-      <td>14</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>2</th>
       <td>4</td>
-      <td>74</td>
+      <td>72</td>
     </tr>
     <tr>
       <th>3</th>
       <td>5</td>
-      <td>6</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>4</th>
@@ -13488,7 +13482,7 @@ Number of entries with yob &lt; 1921: 0
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of entries with base_date not in range [2020-12-11, close_date]: 0
+<pre>Number of entries with full_date not in range [2020-12-11, close_date]: 0
 </pre>
 </div>
 </div>
@@ -13543,8 +13537,8 @@ Number of entries with yob &lt; 1921: 0
   <tbody>
     <tr>
       <th>0</th>
-      <td>283</td>
-      <td>13</td>
+      <td>294</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>1</th>
@@ -13614,19 +13608,19 @@ Number of entries with yob &lt; 1921: 0
   <tbody>
     <tr>
       <th>0</th>
+      <td>3</td>
       <td>1</td>
-      <td>1</td>
-      <td>7</td>
-      <td>1</td>
-      <td>286</td>
+      <td>5</td>
+      <td>0</td>
+      <td>297</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>23</td>
+      <td>23</td>
+      <td>22</td>
       <td>20</td>
-      <td>28</td>
-      <td>25</td>
-      <td>13</td>
-      <td>14</td>
+      <td>12</td>
     </tr>
   </tbody>
 </table>
@@ -13688,15 +13682,15 @@ Number of entries with yob &lt; 1921: 0
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>283</td>
+      <td>294</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>21</td>
-      <td>29</td>
-      <td>32</td>
-      <td>14</td>
-      <td>17</td>
+      <td>26</td>
+      <td>24</td>
+      <td>27</td>
+      <td>20</td>
+      <td>15</td>
     </tr>
   </tbody>
 </table>
@@ -13764,9 +13758,9 @@ Number of entries with yob &lt; 1921: 0
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number and proportion in dataset missing vac_dose1: 28, 0.0707070707070707
-Number and proportion in dataset missing vacdose1_date: 22, 0.05555555555555555
-Number of entries with vacdose1_date missing vac_dose1: 15
+<pre>Number and proportion in dataset missing vac_dose1: 28, 0.06896551724137931
+Number and proportion in dataset missing vacdose1_date: 23, 0.05665024630541872
+Number of entries with vacdose1_date missing vac_dose1: 14
 Number of entries with vac_dose1 missing vacdose1_date: 9
 Number of entries with vacdose1_date not in range [2020-12-11, close_date]: 0
 </pre>
@@ -13832,8 +13826,8 @@ Number of entries with vacdose1_date not in range [2020-12-11, close_date]: 0
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number and proportion in dataset missing vac_dose2: 161, 0.4065656565656566
-Number and proportion in dataset missing vacdose2_date: 161, 0.4065656565656566
+<pre>Number and proportion in dataset missing vac_dose2: 171, 0.4211822660098522
+Number and proportion in dataset missing vacdose2_date: 171, 0.4211822660098522
 Number of entries with vacdose2_date missing vac_dose2: 0
 Number of entries with vac_dose2 missing vacdose2_date: 0
 Number of entries with vacdose2_date not in range [vacdose1_date, close_date]: 0
@@ -13900,8 +13894,8 @@ Number of entries with vacdose2_date not in range [vacdose1_date, close_date]: 0
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number and proportion in dataset missing vac_dose3: 365, 0.9217171717171717
-Number and proportion in dataset missing vacdose3_date: 365, 0.9217171717171717
+<pre>Number and proportion in dataset missing vac_dose3: 389, 0.958128078817734
+Number and proportion in dataset missing vacdose3_date: 389, 0.958128078817734
 Number of entries with vacdose3_date missing vac_dose3: 0
 Number of entries with vac_dose3 missing vacdose3_date: 0
 Number of entries with vacdose3_date not in range [vacdose2_date, close_date]: 0
@@ -13963,7 +13957,7 @@ Number of entries with vacdose3_date not in range [vacdose2_date, close_date]: 0
   <tbody>
     <tr>
       <th>Pfizer</th>
-      <td>100</td>
+      <td>101</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
@@ -13971,7 +13965,7 @@ Number of entries with vacdose3_date not in range [vacdose2_date, close_date]: 0
     <tr>
       <th>Moderna</th>
       <td>0</td>
-      <td>116</td>
+      <td>112</td>
       <td>0</td>
       <td>0</td>
     </tr>
@@ -13979,14 +13973,14 @@ Number of entries with vacdose3_date not in range [vacdose2_date, close_date]: 0
       <th>J&amp;J</th>
       <td>0</td>
       <td>0</td>
-      <td>10</td>
-      <td>142</td>
+      <td>13</td>
+      <td>152</td>
     </tr>
     <tr>
       <th>&lt;NA&gt;</th>
+      <td>6</td>
       <td>3</td>
-      <td>4</td>
-      <td>2</td>
+      <td>0</td>
       <td>19</td>
     </tr>
   </tbody>
@@ -14043,31 +14037,31 @@ Number of entries with vacdose3_date not in range [vacdose2_date, close_date]: 0
   <tbody>
     <tr>
       <th>Pfizer</th>
-      <td>12</td>
+      <td>6</td>
       <td>0</td>
       <td>0</td>
-      <td>88</td>
+      <td>95</td>
     </tr>
     <tr>
       <th>Moderna</th>
       <td>0</td>
-      <td>16</td>
+      <td>10</td>
       <td>0</td>
-      <td>100</td>
+      <td>102</td>
     </tr>
     <tr>
       <th>J&amp;J</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>152</td>
+      <td>165</td>
     </tr>
     <tr>
       <th>&lt;NA&gt;</th>
       <td>1</td>
-      <td>2</td>
       <td>0</td>
-      <td>25</td>
+      <td>0</td>
+      <td>27</td>
     </tr>
   </tbody>
 </table>
@@ -14123,31 +14117,31 @@ Number of entries with vacdose3_date not in range [vacdose2_date, close_date]: 0
   <tbody>
     <tr>
       <th>Pfizer</th>
-      <td>13</td>
+      <td>7</td>
       <td>0</td>
       <td>0</td>
-      <td>90</td>
+      <td>100</td>
     </tr>
     <tr>
       <th>Moderna</th>
       <td>0</td>
-      <td>18</td>
+      <td>10</td>
       <td>0</td>
-      <td>102</td>
+      <td>105</td>
     </tr>
     <tr>
       <th>J&amp;J</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>12</td>
+      <td>13</td>
     </tr>
     <tr>
       <th>&lt;NA&gt;</th>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>161</td>
+      <td>171</td>
     </tr>
   </tbody>
 </table>
@@ -14492,8 +14486,8 @@ Number of entries not conforming to the above categories exluding entries with m
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of deaths: 12
-Number of entries with death_date not in range [maximum date, close_date]: 0
+<pre>Number of deaths: 18
+Number of entries with death_date not in range [maximum patient date, close_date]: 0
 </pre>
 </div>
 </div>
@@ -14537,8 +14531,8 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of Disenrolments: 29
-<span class="ansi-red-fg">Number of entries with disenroll_date not in range [maximum date, close_date]: 3</span>
+<pre>Number of Disenrolments: 18
+Number of entries with disenroll_date not in range [maximum date, close_date]: 0
 </pre>
 </div>
 </div>
@@ -14567,7 +14561,7 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Partial-Breakthrough">Partial Breakthrough<a class="anchor-link" href="#Partial-Breakthrough">&#182;</a></h2>
+<h2 id="covidtest_base">covidtest_base<a class="anchor-link" href="#covidtest_base">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14598,10 +14592,34 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of entries with covidtest_base not in range [2020-02-01, full_date]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="coviddx_base">coviddx_base<a class="anchor-link" href="#coviddx_base">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_69_0.png"
+<img src="qa_report_files/qa_report_71_0.png"
 >
 </div>
 
@@ -14619,7 +14637,7 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of entries with partialbreakthrough_date not in range [vacdose1_date, base_date]: 0
+<pre><span class="ansi-red-fg">Number of entries with coviddx_base not in range [2020-02-01, full_date]: 1</span>
 </pre>
 </div>
 </div>
@@ -14628,16 +14646,10 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="covidtest_base">covidtest_base<a class="anchor-link" href="#covidtest_base">&#182;</a></h2>
+<h2 id="aids-and-aids_date">aids and aids_date<a class="anchor-link" href="#aids-and-aids_date">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14668,34 +14680,10 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of entries with covidtest_base not in range [2020-02-01, base_date]: 0
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="coviddx_base">coviddx_base<a class="anchor-link" href="#coviddx_base">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_77_0.png"
+<img src="qa_report_files/qa_report_75_0.png"
 >
 </div>
 
@@ -14713,71 +14701,8 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-red-fg">Number of entries with coviddx_base not in range [2020-02-01, base_date]: 1</span>
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="aids-and-aids_date">aids and aids_date<a class="anchor-link" href="#aids-and-aids_date">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_80_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_81_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre><span class="ansi-red-fg">Number with aids == 1 and no aids_date: 1</span>
+<pre>Number with aids == 1 and no aids_date: 0
+<span class="ansi-red-fg">Number of entries with art_start not in range [yob, full_date]: 1</span>
 </pre>
 </div>
 </div>
@@ -14793,6 +14718,13 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ART_start">ART_start<a class="anchor-link" href="#ART_start">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -14803,7 +14735,7 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_84_0.png"
+<img src="qa_report_files/qa_report_79_0.png"
 >
 </div>
 
@@ -14812,6 +14744,75 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number without a history of hiv and an art_start value: 0
+Number of entries with art_start not in range [yob, close_date]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ART_CD4">ART_CD4<a class="anchor-link" href="#ART_CD4">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_82_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number without a history of hiv and an art_cd4 value: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ART_CD4_date">ART_CD4_date<a class="anchor-link" href="#ART_CD4_date">&#182;</a></h3>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -14840,60 +14841,12 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 
 <div class="output_area">
 
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_86_0.png"
->
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number without a history of hiv and an art_cd4_cd4 value: 0
+<span class="ansi-red-fg">Number with a art_cd4_date but no art_start_date: 2</span>
+<span class="ansi-red-fg">Number of entries with art_cd4_date not in range of art_start: 40</span>
+</pre>
 </div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Base-CD4">Base CD4<a class="anchor-link" href="#Base-CD4">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_88_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_89_0.png"
->
-</div>
-
 </div>
 
 </div>
@@ -14903,54 +14856,7 @@ Number of entries with death_date not in range [maximum date, close_date]: 0
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Base-HIVRNA">Base HIVRNA<a class="anchor-link" href="#Base-HIVRNA">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_91_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_92_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="FOLLOWUP_CD4.csv">FOLLOWUP_CD4.csv<a class="anchor-link" href="#FOLLOWUP_CD4.csv">&#182;</a></h1>
+<h1 id="CD4.csv">CD4.csv<a class="anchor-link" href="#CD4.csv">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14987,7 +14893,7 @@ dtype: object
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_95_0.png"
+<img src="qa_report_files/qa_report_89_0.png"
 >
 </div>
 
@@ -15004,13 +14910,116 @@ dtype: object
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of entries in CD4.csv with civets_id not in PATIENT.csv: 0
+Number of entries in CD4.csv with hiv=0 and hiv_fu=0: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_96_0.png"
+<img src="qa_report_files/qa_report_91_0.png"
 >
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of CD4 entries outside range [0, 10000]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_93_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of date entries outside range [2020-01-01, close_date]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="HIVRNA.csv">HIVRNA.csv<a class="anchor-link" href="#HIVRNA.csv">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>All columns were interpreted as the correct data types.
+civets_id                Int64
+matchedto_id             Int64
+close_date      datetime64[ns]
+date            datetime64[ns]
+hivrna                   Int64
+llq                      Int64
+dtype: object
+</pre>
+</div>
 </div>
 
 </div>
@@ -15037,13 +15046,6 @@ dtype: object
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="FOLLOWUP_HIVRNA.csv">FOLLOWUP_HIVRNA.csv<a class="anchor-link" href="#FOLLOWUP_HIVRNA.csv">&#182;</a></h1>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -15052,13 +15054,8 @@ dtype: object
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>All columns were interpreted as the correct data types.
-civets_id                Int64
-matchedto_id             Int64
-close_date      datetime64[ns]
-date            datetime64[ns]
-hivrna                   Int64
-dtype: object
+<pre>Number of entries in HIVRNA.csv with civets_id not in PATIENT.csv: 0
+Number of entries in HIVRNA.csv with hiv=0 and hiv_fu=0: 0
 </pre>
 </div>
 </div>
@@ -15077,10 +15074,27 @@ dtype: object
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_100_0.png"
+<img src="qa_report_files/qa_report_99_0.png"
 >
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of llq entries less than zero: 0
+</pre>
+</div>
 </div>
 
 </div>
@@ -15114,10 +15128,28 @@ dtype: object
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of HIVRNA entries less than zero: 0
+Number of HIVRNA entries less than llq: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_102_0.png"
+<img src="qa_report_files/qa_report_103_0.png"
 >
 </div>
 
@@ -15127,10 +15159,27 @@ dtype: object
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of date entries outside range [2020-01-01, close_date]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="FOLLOWUP_TEST.csv">FOLLOWUP_TEST.csv<a class="anchor-link" href="#FOLLOWUP_TEST.csv">&#182;</a></h1>
+<h1 id="COVID_TEST.csv">COVID_TEST.csv<a class="anchor-link" href="#COVID_TEST.csv">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -15152,46 +15201,6 @@ covid_testresult             Int64
 dtype: object
 </pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_105_0.png"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_106_0.png"
->
-</div>
-
 </div>
 
 </div>
@@ -15238,13 +15247,6 @@ dtype: object
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="FOLLOWUP_DX.csv">FOLLOWUP_DX.csv<a class="anchor-link" href="#FOLLOWUP_DX.csv">&#182;</a></h1>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -15253,13 +15255,8 @@ dtype: object
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>All columns were interpreted as the correct data types.
-civets_id                      Int64
-matchedto_id                   Int64
-close_date            datetime64[ns]
-covid_diagnose                 Int64
-covid_diagnosedate    datetime64[ns]
-dtype: object
+<pre>Number of covid_test entries not in [0, 1, 2, .]: 0
+Number of missing covid_test entries: 93
 </pre>
 </div>
 </div>
@@ -15278,10 +15275,28 @@ dtype: object
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_111_0.png"
+<img src="qa_report_files/qa_report_110_0.png"
 >
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of covid_testresult entries not in [0, 1 .]: 0
+Number of missing covid_testresult entries: 149
+</pre>
+</div>
 </div>
 
 </div>
@@ -15315,13 +15330,11 @@ dtype: object
 
 <div class="output_area">
 
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_113_0.png"
->
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of covid_testdate entries not in range [2020-01-01, close_date]: 0
+Number of missing covid_testdate entries: 19
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -15331,7 +15344,7 @@ dtype: object
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="BREAKTHROUGH_IM.csv">BREAKTHROUGH_IM.csv<a class="anchor-link" href="#BREAKTHROUGH_IM.csv">&#182;</a></h1>
+<h1 id="COVID_DX.csv">COVID_DX.csv<a class="anchor-link" href="#COVID_DX.csv">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -15344,13 +15357,11 @@ dtype: object
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>All columns were interpreted as the correct data types.
-civets_id                     Int64
-matchedto_id                  Int64
-close_date           datetime64[ns]
-breakthrough_date    datetime64[ns]
-im_status                     Int64
-im_icd                       object
-im_date              datetime64[ns]
+civets_id                      Int64
+matchedto_id                   Int64
+close_date            datetime64[ns]
+covid_diagnose                 Int64
+covid_diagnosedate    datetime64[ns]
 dtype: object
 </pre>
 </div>
@@ -15407,25 +15418,16 @@ dtype: object
 
 <div class="output_area">
 
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_118_0.png"
->
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of covid_diagnose entries not in [1, 2 .]: 0
+Number of missing covid_diagnose entries: 21
+</pre>
 </div>
-
 </div>
 
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="IM-Date">IM Date<a class="anchor-link" href="#IM-Date">&#182;</a></h2>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -15437,7 +15439,7 @@ dtype: object
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_120_0.png"
+<img src="qa_report_files/qa_report_119_0.png"
 >
 </div>
 
@@ -15447,10 +15449,28 @@ dtype: object
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of covid_diagnosedate entries not in range [2020-01-01, close_date]: 0
+Number of missing covid_diagnosedate entries: 1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="IM-Date-By-IM-Status">IM Date By IM Status<a class="anchor-link" href="#IM-Date-By-IM-Status">&#182;</a></h2>
+<h1 id="IM.csv">IM.csv<a class="anchor-link" href="#IM.csv">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -15461,13 +15481,18 @@ dtype: object
 
 <div class="output_area">
 
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_122_0.png"
->
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>All columns were interpreted as the correct data types.
+civets_id                Int64
+matchedto_id             Int64
+close_date      datetime64[ns]
+im_status                Int64
+im_icd                  object
+im_date         datetime64[ns]
+deliver_date    datetime64[ns]
+dtype: object
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -15521,13 +15546,11 @@ dtype: object
 
 <div class="output_area">
 
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_125_0.png"
->
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of im_status entries not in [1, 2, 3, 4, 5]: 0
+Number of missing im_status entries: 0
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -15554,13 +15577,6 @@ dtype: object
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="BREAKTHROUGH_HOSP.csv">BREAKTHROUGH_HOSP.csv<a class="anchor-link" href="#BREAKTHROUGH_HOSP.csv">&#182;</a></h1>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
@@ -15569,17 +15585,7 @@ dtype: object
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>All columns were interpreted as the correct data types.
-civets_id                     Int64
-matchedto_id                  Int64
-close_date           datetime64[ns]
-breakthrough_date    datetime64[ns]
-admission_date       datetime64[ns]
-discharge_date       datetime64[ns]
-discharge_dx                 object
-oxygen                        Int64
-ventilation                   Int64
-dtype: object
+<pre>Number of missing im_date entries: 0
 </pre>
 </div>
 </div>
@@ -15587,6 +15593,13 @@ dtype: object
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="IM-Date-By-IM-Status">IM Date By IM Status<a class="anchor-link" href="#IM-Date-By-IM-Status">&#182;</a></h2>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -15615,13 +15628,10 @@ dtype: object
 
 <div class="output_area">
 
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_130_0.png"
->
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of transplant im_date entries not in range [2015-10-01, close_date]: 0
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -15655,13 +15665,10 @@ dtype: object
 
 <div class="output_area">
 
-
-
-<div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_132_0.png"
->
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of ra im_date entries not in range [2015-10-01, close_date]: 0
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -15695,10 +15702,27 @@ dtype: object
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of lupus im_date entries not in range [2015-10-01, close_date]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
 
 
 <div class="output_png output_subarea ">
-<img src="qa_report_files/qa_report_134_0.png"
+<img src="qa_report_files/qa_report_135_0.png"
 >
 </div>
 
@@ -15710,23 +15734,301 @@ dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of cancer im_date entries not in range [2020-01-01, close_date]: 0
+</pre>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+
+</div>
+</div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_137_0.png"
+>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+
+</div>
+</div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of pregnancy im_date entries not in range [2020-01-01, close_date]: 0
+</pre>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
+</div>
+
+</div>
+</div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_139_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of pregnancy deliver_date entries not in range im_date +/- 120 days: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="HOSP.csv">HOSP.csv<a class="anchor-link" href="#HOSP.csv">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>All columns were interpreted as the correct data types.
+civets_id                  Int64
+matchedto_id               Int64
+close_date        datetime64[ns]
+admission_date    datetime64[ns]
+discharge_date    datetime64[ns]
+discharge_dx              object
+oxygen                     Int64
+oxygen_code               object
+ventilation                Int64
+vent_code                 object
+dtype: object
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_143_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_144_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of missing admission_date entries: 0
+Number of admission_date entries not in range [2020-12-01, close_date]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_146_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of missing discharge_date entries: 0
+Number of discharge_date entries = 2025-01-01: 59
+Number of discharge_date entries not in range [admission_date, close_date]: 0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_148_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of oxygen entries not in [0, 1, 2, 3, 4]: 0
+Number of missing oxygen entries: 45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="qa_report_files/qa_report_150_0.png"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of ventilation entries not in [0, 1, 2]: 0
+Number of missing ventilation entries: 68
+</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 </div>
     </div>
